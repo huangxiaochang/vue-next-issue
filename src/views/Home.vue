@@ -1,18 +1,25 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+  <div class="container">
+    hello word
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
+import { defineComponent, ref } from 'vue';
 
 export default defineComponent({
   name: 'Home',
-  components: {
-    HelloWorld,
-  },
+  setup() {
+    const homeHeight = ref('1000px')
+    return {
+      homeHeight
+    }
+  }
 });
 </script>
+
+<style lang="scss" scoped>
+.container {
+  min-height: v-bind(homeHeight);
+}
+</style>
